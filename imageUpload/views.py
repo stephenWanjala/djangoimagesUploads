@@ -20,3 +20,8 @@ def upload_image(request):
 def uploaded_image(request, pk):
     instance = UploadedImage.objects.get(pk=pk)
     return render(request, 'uploaded_image.html', {'instance': instance})
+
+
+def view_uploaded_images(request):
+    images = UploadedImage.objects.all()
+    return render(request, 'view_uploaded_images.html', {'images': images})
