@@ -48,3 +48,6 @@ python manage.py runserver
 ```
 
 Open your web browser and navigate to http://127.0.0.1:8000/. The app should be up and running.
+
+## Contributing
+Contributions are welcome! If you find a bug or want to add new features, feel free to open an issue or submit a pull request.
