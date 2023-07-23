@@ -1,7 +1,8 @@
 # views.py
 from django.shortcuts import render, redirect
-from .models import UploadedImage
+
 from .forms import UploadImageForm
+from .models import UploadedImage
 
 
 def upload_image(request):

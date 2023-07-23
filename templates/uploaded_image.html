@@ -1,9 +1,15 @@
 <!-- uploaded_image.html -->
-{% extends 'base.html' %}  <!-- If you have a base template, extend it, otherwise skip this line -->
+{% extends 'base.html' %}
 
 {% block content %}
   <h1>Uploaded Image</h1>
-  <img src="{{ instance.image.url }}" alt="Uploaded Image">
-  <!-- If you have other attributes in the UploadedImage model, you can display them as well -->
-  <p>Uploaded at: {{ instance.uploaded_at }}</p>
+  <div class="card" style="width: 18rem;">
+    <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.image.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ instance.image.name }}</h5>
+      <p class="card-text">Uploaded at: {{ instance.uploaded_at }}</p>
+      <p class="card-text">Size: {{ instance.image.size }} bytes</p>
+      <p class="card-text">Mime Type: {{ instance.mimetype }}</p>
+    </div>
+  </div>
 {% endblock %}
