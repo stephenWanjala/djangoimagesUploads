@@ -7,13 +7,19 @@
     {% for image in images %}
       <div class="col-md-4 mb-4">
         <div class="card">
-          <a href="{{ image.image.url }}" target="_blank">
+          <a href="{% url 'uploaded_image' image.pk %}">
             <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.image.name }}">
           </a>
           <div class="card-body">
             <h5 class="card-title">{{ image.image.name }}</h5>
             <p class="card-text">Uploaded at: {{ image.uploaded_at }}</p>
             <p class="card-text">Mime Type: {{ image.mimetype }}</p>
+            <form method="post" action="{% url 'delete_image' image.pk %}" class="mt-3">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> Delete
+              </button>
+            </form>
           </div>
         </div>
       </div>
