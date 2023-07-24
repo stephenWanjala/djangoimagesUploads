@@ -24,7 +24,7 @@ Activate the virtual environment:
 
 On Windows:
 ```bash
-venv\Scripts\activate
+venv\Scripts\activate.bat
 ```
 On macOS and Linux:
 ```bash
@@ -39,6 +39,7 @@ pip install -r requirements.txt
 
 Apply database migrations:
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
